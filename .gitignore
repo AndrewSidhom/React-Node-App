@@ -1,0 +1,24 @@
+backend-server/node-modules
+
+# React
+# dependencies
+my-react-app/node_modules
+my-react-app/.pnp
+my-react-app/.pnp.js
+
+# testing
+my-react-app/coverage
+
+# production
+my-react-app/build
+
+# misc
+my-react-app/.DS_Store
+my-react-app/.env.local
+my-react-app/.env.development.local
+my-react-app/.env.test.local
+my-react-app/.env.production.local
+
+my-react-app/npm-debug.log*
+my-react-app/yarn-debug.log*
+my-react-app/yarn-error.log*
