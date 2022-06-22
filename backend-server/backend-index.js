@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 // Have Node serve the files for our built React app
-// app.use(express.static(path.resolve(__dirname, '../my-react-app/build')));
+app.use(express.static(path.resolve(__dirname, '../my-react-app/build')));
 
 function getComic(id){
   return new Promise((resolve, reject) => {
@@ -40,31 +40,6 @@ function getComic(id){
   });
 }
 
-  //   var req = https.request(options, res => {
-  //     if (res.statusCode != 200){
-  //       var error = {statusCode: res.statusCode, message: 'Failed to get comic with id ' + id};
-  //       reject(new Error(JSON.stringify(error)));
-  //     }
-  //     else {
-  //       var buffer = Buffer.from('');
-  //       res.on('data', d => {
-  //         buffer.write(d);
-  //       })
-  //       res.on('end', () => {
-  //         let str = buffer.toString();
-  //         resolve(JSON.parse(buffer.toString('utf8')));
-  //       });
-  //     }
-  //   });
-
-  //   req.on('error', error => {
-  //     var error = {statusCode: 400, message: 'Request error when requesting comic with id ' + id, detail: error};
-  //     reject(new Error(JSON.stringify(error)));
-  //   });
-
-  //   req.end();
-  // });
-
 // Handle GET requests to /api/*
 app.get('/api/*', (req, res)=>{
   if (req.url == '/api/comics/latest'){
@@ -91,9 +66,9 @@ app.get('/api/*', (req, res)=>{
 });
 
 // All other GET requests not handled before will return our React app
-//app.get('*', (req, res)=>{
-//  res.sendFile(path.resolve(__dirname, '../my-react-app/build', 'index.html'));
-//});
+app.get('*', (req, res)=>{
+ res.sendFile(path.resolve(__dirname, '../my-react-app/build', 'index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
