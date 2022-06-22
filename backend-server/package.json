@@ -5,11 +5,13 @@
   "main": "comic-strips-backend.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend-server/comic-strips-backend.js"
+    "start": "node backend-index.js",
+    "debug": "node --inspect backend-index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
     "express": "^4.18.1"
   }
 }
