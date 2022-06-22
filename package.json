@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend-index.js",
-    "debug": "node --inspect backend-index.js"
+    "debug": "node --inspect backend-index.js",
+    "heroku-postbuild": "cd my-react-app && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",

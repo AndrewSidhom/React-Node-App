@@ -1,4 +1,5 @@
-backend-server/node_modules
+# Node
+node_modules
 
 # React
 # dependencies
